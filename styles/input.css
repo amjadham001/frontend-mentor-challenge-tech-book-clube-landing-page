@@ -1,1 +1,200 @@
+/* Inter Font Family */
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf")
+		format("truetype-variations");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+		format("truetype-variations");
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* Inter Static Fonts */
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/inter/static/Inter_18pt-Regular.ttf")
+		format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../assets/fonts/inter/static/Inter_18pt-SemiBold.ttf")
+		format("truetype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Martian Mono Font Family */
+@font-face {
+	font-family: "Martian Mono";
+	src: url("../assets/fonts/martian-mono/MartianMono-VariableFont_wdth,wght.ttf")
+		format("truetype-variations");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Martian Mono Static Fonts */
+@font-face {
+	font-family: "Martian Mono";
+	src: url("../assets/fonts/martian-mono/static/MartianMono-Regular.ttf")
+		format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Martian Mono";
+	src: url("../assets/fonts/martian-mono/static/MartianMono-SemiBold.ttf")
+		format("truetype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Martian Mono";
+	src: url("../assets/fonts/martian-mono/static/MartianMono-Bold.ttf")
+		format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 @import "tailwindcss";
+
+@theme {
+	/* tech breakpoints */
+	--breakpoint-sm: 20rem;
+	--breakpoint-xl: 90rem;
+
+	/* tech fonts */
+	--font-inter: Inter, sans-serif;
+	--font-martian-mono: "Martian Mono", sans-serif;
+
+	/* tech colors */
+	--color-tech-neutral-900: #062630;
+	--color-tech-neutral-700: #385159;
+	--color-tech-neutral-200: #e6e1df;
+	--color-tech-neutral-100: #faf5f3;
+	--color-tech-neutral-0: #ffffff;
+
+	--color-tech-salmon-500: #fea36f;
+	--color-tech-salmon-100: #ffe2d1;
+	--color-tech-salmon-50: #fff5ef;
+}
+
+@layer base {
+	button {
+		cursor: pointer;
+	}
+}
+
+@layer components {
+	/* tech typography */
+	.tech-typo-1 {
+		@apply text-[2.375rem] leading-[120%] font-bold -tracking-[2px];
+
+		@variant md {
+			@apply text-[3.875rem];
+		}
+	}
+	.tech-typo-2 {
+		@apply text-[2.125rem] leading-[130%] font-semibold -tracking-[2px];
+
+		@variant md {
+			@apply text-[3.125rem];
+		}
+	}
+	.tech-typo-3 {
+		@apply text-[1.5rem] leading-[110%] font-semibold -tracking-[1px];
+
+		@variant md {
+			@apply text-[2.125rem] leading-[130%];
+		}
+	}
+	.tech-typo-4 {
+		@apply text-[1.5rem] leading-[110%] font-semibold -tracking-[1px];
+	}
+	.tech-typo-4--regular {
+		@apply text-[1.5rem] leading-[120%] font-normal -tracking-[1px];
+	}
+	.tech-typo-5 {
+		@apply text-[1.25rem] leading-[140%] font-normal -tracking-[.5px];
+	}
+	.tech-typo-5--semibold {
+		@apply text-[1.25rem] leading-[140%] font-semibold -tracking-[.5px];
+	}
+	.tech-typo-6 {
+		@apply text-[1rem] leading-[130%] font-semibold -tracking-[1px];
+
+		@variant md {
+			@apply text-[1.125rem];
+		}
+	}
+	.tech-typo-7 {
+		@apply text-[0.875rem] leading-[120%] font-normal -tracking-[1px];
+	}
+
+	/* tech logo */
+	.tech-logo {
+		@apply flex items-center justify-center bg-gray-100 p-1 transition;
+
+		@variant hover {
+			@apply scale-105;
+		}
+	}
+
+	/* tech icons */
+	.tech-icon {
+		@apply flex items-center justify-center bg-gray-100 p-1;
+	}
+
+	/* tech btns */
+	.tech-btn {
+		@apply flex items-center justify-center gap-4 rounded-lg border-2 px-6 py-5;
+		@apply font-martian-mono text-[1rem] leading-[130%] font-semibold -tracking-[1px];
+		@apply transition;
+
+		@variant md {
+			@apply text-[1.125rem];
+		}
+	}
+	.tech-btn--primary {
+		@apply bg-tech-salmon-50 text-tech-neutral-900;
+
+		@variant hover {
+			@apply from-tech-salmon-100 to-tech-salmon-50 bg-linear-to-r;
+		}
+
+		@variant focus {
+			@apply outline-tech-neutral-700 outline-2 outline-offset-3;
+		}
+	}
+	.tech-btn--secondary {
+		@apply bg-tech-neutral-900 text-tech-neutral-0;
+
+		@variant hover {
+			@apply from-tech-neutral-700 to-tech-neutral-900 bg-linear-to-r;
+		}
+
+		@variant focus {
+			@apply outline-tech-neutral-200 outline-2 outline-offset-3;
+		}
+	}
+
+	/* tech photo */
+}

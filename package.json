@@ -7,6 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "tailwindcss -i ./styles/input.css -o ./styles/output.css --watch",
 		"build": "tailwindcss -i ./styles/input.css -o ./styles/output.css --minify",
+		"server": "live-server --open=index.html",
 		"format": "prettier --write \"**/*.{html,css,js}\""
 	},
 	"keywords": [],
@@ -17,6 +18,7 @@
 		"tailwindcss": "^4.1.12"
 	},
 	"devDependencies": {
+		"live-server": "^1.2.2",
 		"prettier": "^3.6.2",
 		"prettier-plugin-tailwindcss": "^0.6.14"
 	}
