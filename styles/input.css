@@ -95,6 +95,14 @@
 	--color-tech-salmon-500: #fea36f;
 	--color-tech-salmon-100: #ffe2d1;
 	--color-tech-salmon-50: #fff5ef;
+
+	/* tech gradients */
+	--tech-gradient-primary: linear-gradient(
+		107deg,
+		#ff9a60 -11.37%,
+		#062630 61.84%
+	);
+	--tech-gradient-secondary: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
 }
 
 @layer base {
@@ -195,6 +203,4 @@
 			@apply outline-tech-neutral-200 outline-2 outline-offset-3;
 		}
 	}
-
-	/* tech photo */
 }
