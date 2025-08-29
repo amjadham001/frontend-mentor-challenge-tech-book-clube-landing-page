@@ -25,7 +25,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+- [Mobile screenshot](./screenshots/mobile.png)
+- [Tablet screenshot](./screenshots/tablet.png)
+- [Desktop screenshot](./screenshots/desktop.png)
+- [Primary button hover state screenshot](./screenshots/primary-btn-hover.png)
+- [Primary button focus state screenshot](./screenshots/primary-btn-focus.png)
+- [Secondary button hover state screenshot](./screenshots/secondary-btn-hover.png)
+- [Secondary button focus state screenshot](./screenshots/secondary-btn-focus.png)
 
 ### Links
 
