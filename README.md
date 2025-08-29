@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repository]()
-- Live Site URL: [Live Demo]()
+- Solution URL: [GitHub Repository](https://github.com/amjadham001/frontend-mentor-challenge-tech-book-clube-landing-page.git)
+- Live Site URL: [Live Demo](https://amjadham001.github.io/frontend-mentor-challenge-tech-book-clube-landing-page/)
 
 ## My process
 
