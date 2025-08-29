@@ -1,3 +1,4 @@
+/* Font Embedding */
 /* Inter Font Family */
 @font-face {
 	font-family: "Inter";
@@ -74,6 +75,7 @@
 	font-display: swap;
 }
 
+/* Tailwind Customization */
 @import "tailwindcss";
 
 @theme {
@@ -96,6 +98,9 @@
 	--color-tech-salmon-100: #ffe2d1;
 	--color-tech-salmon-50: #fff5ef;
 
+	/* --color-tech-prototype: var(--color-gray-200); */
+	--color-tech-prototype: var(--color-tech-neutral-200);
+
 	/* tech gradients */
 	--tech-gradient-primary: linear-gradient(
 		107deg,
@@ -112,6 +117,19 @@
 }
 
 @layer components {
+	/* tech boxes */
+	.tech-container {
+		@apply mx-auto max-w-93.75 px-4;
+
+		@variant md {
+			@apply max-w-192 px-8;
+		}
+
+		@variant xl {
+			@apply max-w-360 px-33.75;
+		}
+	}
+
 	/* tech typography */
 	.tech-typo-1 {
 		@apply text-[2.375rem] leading-[120%] font-bold -tracking-[2px];
@@ -133,6 +151,9 @@
 		@variant md {
 			@apply text-[2.125rem] leading-[130%];
 		}
+	}
+	.tech-typo-3--desktop {
+		@apply text-[2.125rem] leading-[130%] font-semibold -tracking-[1px];
 	}
 	.tech-typo-4 {
 		@apply text-[1.5rem] leading-[110%] font-semibold -tracking-[1px];
@@ -159,7 +180,7 @@
 
 	/* tech logo */
 	.tech-logo {
-		@apply flex items-center justify-center bg-gray-100 p-1 transition;
+		@apply flex items-center justify-center transition;
 
 		@variant hover {
 			@apply scale-105;
@@ -168,21 +189,19 @@
 
 	/* tech icons */
 	.tech-icon {
-		@apply flex items-center justify-center bg-gray-100 p-1;
+		@apply flex items-center justify-center;
 	}
 
 	/* tech btns */
 	.tech-btn {
-		@apply flex items-center justify-center gap-4 rounded-lg border-2 px-6 py-5;
-		@apply font-martian-mono text-[1rem] leading-[130%] font-semibold -tracking-[1px];
-		@apply transition;
+		@apply font-martian-mono flex items-center justify-center gap-4 rounded-lg border-2 px-5.5 py-4.5 text-[1rem] leading-[130%] font-semibold -tracking-[1px] uppercase transition;
 
 		@variant md {
 			@apply text-[1.125rem];
 		}
 	}
 	.tech-btn--primary {
-		@apply bg-tech-salmon-50 text-tech-neutral-900;
+		@apply bg-tech-salmon-50 text-tech-neutral-900 border-tech-neutral-900;
 
 		@variant hover {
 			@apply from-tech-salmon-100 to-tech-salmon-50 bg-linear-to-r;
@@ -193,7 +212,7 @@
 		}
 	}
 	.tech-btn--secondary {
-		@apply bg-tech-neutral-900 text-tech-neutral-0;
+		@apply text-tech-neutral-0 border-tech-neutral-0 bg-transparent;
 
 		@variant hover {
 			@apply from-tech-neutral-700 to-tech-neutral-900 bg-linear-to-r;
