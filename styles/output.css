@@ -540,6 +540,9 @@
   .bg-\[url\(\.\/assets\/images\/pattern-light-bg\.svg\)\] {
     background-image: url(./assets/images/pattern-light-bg.svg);
   }
+  .bg-\[url\(\.\/assets\/images\/pattern\.svg\)\] {
+    background-image: url(./assets/images/pattern.svg);
+  }
   .bg-\[url\(\/assets\/images\/pattern-dark-bg\.svg\)\] {
     background-image: url(/assets/images/pattern-dark-bg.svg);
   }

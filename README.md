@@ -10,6 +10,7 @@ This is a solution to the [Tech book club landing page challenge on Frontend Men
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -48,6 +49,35 @@ Users should be able to:
 - CSS Grid
 - [Tailwindcss](https://tailwindcss.com/) - CSS framework
 - Mobile-first workflow
+
+### What I learned
+
+#### Path Resolution in Tailwind CSS Arbitrary Values
+
+During development, I encountered an issue with some image loading when using Tailwind's arbitrary value utilities for background images. The problem stemmed from path resolution differences between the HTML file location and the generated CSS file location.
+
+**The Issue:**
+When using arbitrary value utilities like `bg-[url(./assets/images/pattern.svg)]`, Tailwind processes these class names and generates CSS rules in a new CSS file at `styles/` folder (according to our configuration). Since the CSS file is located in the `styles/` subdirectory while the HTML file is in the root directory, the relative paths become invalid when referenced from the CSS context.
+
+**Example of the Problem:**
+
+```html
+<!-- ❌ Incorrect - Path relative to HTML location -->
+<div class="bg-[url(./assets/images/pattern-light-bg.svg)]"></div>
+
+<!-- ✅ Correct - Path relative to CSS file location -->
+<div class="bg-[url(../assets/images/pattern-light-bg.svg)]"></div>
+```
+
+**Root Cause:**
+
+- HTML file location: `/` (root)
+- CSS file location: `/styles/`
+- When CSS references `./assets/`, it looks for assets relative to `/styles/` (which doesn't exist)
+- The correct path should be `../assets/` to go up one directory from `/styles/` to `/` before accessing the assets folder
+
+**Key Learning:**
+When using Tailwind's arbitrary value utilities with file paths, always consider the final location of the generated CSS file, not the HTML file, when determining relative paths. This is a common pitfall that can cause resource loading failures in production builds.
 
 ### Useful resources
 
