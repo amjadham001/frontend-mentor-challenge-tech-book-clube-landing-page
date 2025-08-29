@@ -528,6 +528,12 @@
   .bg-\(image\:--tech-gradient-primary\) {
     background-image: var(--tech-gradient-primary);
   }
+  .bg-\[url\(\.\.\/assets\/images\/pattern-dark-bg\.svg\)\] {
+    background-image: url(../assets/images/pattern-dark-bg.svg);
+  }
+  .bg-\[url\(\.\.\/assets\/images\/pattern-light-bg\.svg\)\] {
+    background-image: url(../assets/images/pattern-light-bg.svg);
+  }
   .bg-\[url\(\.\/assets\/images\/pattern-dark-bg\.svg\)\] {
     background-image: url(./assets/images/pattern-dark-bg.svg);
   }
@@ -684,6 +690,12 @@
       content: var(--tw-content);
       --tw-translate-y: calc(calc(50% + 1px) * -1);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .before\:bg-\[url\(\.\.\/assets\/images\/pattern-circle\.svg\)\] {
+    &::before {
+      content: var(--tw-content);
+      background-image: url(../assets/images/pattern-circle.svg);
     }
   }
   .before\:bg-\[url\(\.\/assets\/images\/pattern-circle\.svg\)\] {
@@ -1266,6 +1278,18 @@
           &::before {
             content: var(--tw-content);
             width: calc(var(--spacing) * 20);
+          }
+        }
+      }
+    }
+  }
+  .\*\:not-last\:xl\:before\:bg-\[url\(\.\.\/assets\/images\/pattern-arrow\.svg\)\] {
+    :is(& > *) {
+      &:not(*:last-child) {
+        @media (width >= 90rem) {
+          &::before {
+            content: var(--tw-content);
+            background-image: url(../assets/images/pattern-arrow.svg);
           }
         }
       }
